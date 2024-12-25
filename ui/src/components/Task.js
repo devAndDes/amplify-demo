@@ -5,7 +5,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { UpdateTaskForm } from "./UpdateTaskForm";
 import classnames from "classnames";
 import axios from "axios";
-import { API_URL } from "../utila";
+import { API_URL } from "../utils";
 export const Task = ({ task, fetchTasks }) => {
   const { id, name, completed } = task;
   const [isCompleted, setIsCompleted] = useState(completed);
@@ -48,7 +48,7 @@ export const Task = ({ task, fetchTasks }) => {
         </Button>
       </div>
       <UpdateTaskForm
-      fetchTasks={fetchTasks}
+        fetchTasks={fetchTasks}
         isDialogOpen={isDialogOpen}
         setIsDialogOpen={setIsDialogOpen}
         task={task}

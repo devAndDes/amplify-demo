@@ -1,10 +1,11 @@
 import { AddTaskForm } from "./components/AddTaskForm";
-
+import { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Task } from "./components/Task";
 import axios from "axios";
 import { useEffect } from "react";
+import { API_URL } from "./utils";
 
 const darkTheme = createTheme({
   palette: {
@@ -33,7 +34,7 @@ export default function App() {
       <CssBaseline />
       <AddTaskForm fetchTasks={fetchTasks} />
       {tasks.map((task) => {
-        <Task key={task.id} task={task} fetchTasks={fetchTasks} />;
+        return <Task key={task.id} task={task} fetchTasks={fetchTasks} />;
       })}
     </ThemeProvider>
   );

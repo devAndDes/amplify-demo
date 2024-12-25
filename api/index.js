@@ -1,5 +1,5 @@
 import express from "express";
-import { fetchTasks, createTasks, updateTasks, deleteTasks } from "./task";
+import { fetchTasks, createTasks, updateTasks, deleteTasks } from "./task.js";
 import serverless from "serverless-http";
 import cors from "cors";
 const app = express();
@@ -64,6 +64,7 @@ app.delete("/task:id", async (req, res) => {
   }
 });
 
+console.log(process.env);
 if (process.env.DEVELOPMENT) {
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
