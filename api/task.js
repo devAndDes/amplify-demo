@@ -17,7 +17,7 @@ export const fetchTasks = async () => {
       "#name": "name",
     },
     ProjectionExpression: "id, #name, completed",
-    TableName: "tasks",
+    TableName: "Tasks",
   });
 
   const response = await docCLient.send(command);
