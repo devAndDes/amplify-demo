@@ -9,7 +9,7 @@ import { API_URL } from "./utils";
 
 const darkTheme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
   },
 });
 
