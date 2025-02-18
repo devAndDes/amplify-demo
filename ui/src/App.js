@@ -29,6 +29,7 @@ export default function App() {
   };
 
   useEffect(() => {
+    console.log(process.env);
     fetchTasks();
   }, []);
 
@@ -42,3 +43,17 @@ export default function App() {
     </ThemeProvider>
   );
 }
+
+function myObs(observer) {
+  let i = 0;
+
+  const id = setInterval(() => observer.next(i++), 1000);
+  return () => {
+    console.log(id);
+    clearInterval(id);
+  };
+}
+
+const sub = myObs({ next: (value) => console.log(value) });
+
+setTimeout(() => sub(), 3000);
